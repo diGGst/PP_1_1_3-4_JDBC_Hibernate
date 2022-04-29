@@ -24,7 +24,7 @@ public class UserDaoHibernateImpl implements UserDao {
 
     @Override
     public void createUsersTable() {
-        applyQuery("CREATE TABLE IF NOT EXISTS `Users` " +
+        applyQuery("CREATE TABLE IF NOT EXISTS `users` " +
                 "(`ID` BIGINT NOT NULL AUTO_INCREMENT," +
                 "`Name` VARCHAR(100) NULL," +
                 "`LastName` VARCHAR(100) NULL," +
@@ -34,7 +34,7 @@ public class UserDaoHibernateImpl implements UserDao {
 
     @Override
     public void dropUsersTable() {
-        applyQuery("DROP TABLE IF EXISTS `Users`");
+        applyQuery("DROP TABLE IF EXISTS `users`");
     }
 
     @Override
@@ -94,6 +94,6 @@ public class UserDaoHibernateImpl implements UserDao {
 
     @Override
     public void cleanUsersTable() {
-        applyQuery("DELETE FROM `Users`");
+        applyQuery("DELETE FROM `users`");
     }
 }

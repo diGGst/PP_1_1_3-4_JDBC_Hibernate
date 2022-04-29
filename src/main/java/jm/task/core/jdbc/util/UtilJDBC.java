@@ -13,14 +13,6 @@ public class UtilJDBC {
         String userName = "root";
         String password = "1q2w3e4r";
 
-        return getMySQLConnection(hostName, dbName, userName, password);
-    }
-
-    public static Connection getMySQLConnection(String hostName, String dbName,
-                                                String userName, String password) throws SQLException {
-
-        String connectionURL = "jdbc:mysql://" + hostName + ":3306/" + dbName;
-
-        return DriverManager.getConnection(connectionURL, userName, password);
+        return DriverManager.getConnection("jdbc:mysql://" + hostName + ":3306/" + dbName, userName, password);
     }
 }

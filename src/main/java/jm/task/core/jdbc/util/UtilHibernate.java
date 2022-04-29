@@ -1,11 +1,8 @@
 package jm.task.core.jdbc.util;
 
-import java.util.HashMap;
-import java.util.Map;
 import java.util.Properties;
 
 import org.hibernate.SessionFactory;
-import org.hibernate.boot.MetadataSources;
 import org.hibernate.boot.registry.StandardServiceRegistry;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 
@@ -33,7 +30,6 @@ public class UtilHibernate {
                 settings.put(Environment.PASS, "1q2w3e4r");
                 settings.put(Environment.DIALECT, "org.hibernate.dialect.MySQL8Dialect");
                 settings.put(Environment.SHOW_SQL, "true");
-//                settings.put(Environment.HBM2DDL_AUTO, "update");
 
                 configuration.setProperties(settings);
 
@@ -49,11 +45,5 @@ public class UtilHibernate {
             }
         }
         return sessionFactory;
-    }
-
-    public static void shutdown() {
-        if (registry != null) {
-            StandardServiceRegistryBuilder.destroy(registry);
-        }
     }
 }
